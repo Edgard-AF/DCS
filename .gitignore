@@ -1,0 +1,13 @@
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Brain / Artifacts (if they should stay local)
+.gemini/
+brain/

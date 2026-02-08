@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Hidroelectrica Misicuni - SCADA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- HEADER -->
+        <!-- HEADER & NAV COMBINED -->
+        <header class="main-header">
+            <div class="header-main-column">
+                <div class="header-top-row">
+                    <div class="header-left">
+                        <!-- Logos and Title could go here -->
+                    </div>
+                    <div class="header-center">
+                        <h1>CENTRAL HIDROELECTRICA: IVIRIZU</h1>
+                        <div class="sub-info">
+                            <span>Usuario: operador</span><BR>
+                            <span>Nombre PC: IVIRIZU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRIMARY NAVIGATION (Moved inside header) -->
+                <nav class="primary-nav">
+                    <ul id="primary-tabs">
+                        <!-- Injected via JS -->
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="datetime-container">
+                    <div id="clock" class="clock">00:00:00</div>
+                    <div id="date" class="date">01/01/2026</div>
+                </div>
+                <img src="assets/logo.jpg" alt="Logo" class="logo-placeholder"
+                    style="height: 60px; width: auto; object-fit: contain;">
+            </div>
+        </header>
+
+        <!-- SECONDARY NAVIGATION -->
+
+        <!-- SECONDARY NAVIGATION -->
+        <nav class="secondary-nav">
+            <!-- Injected via JS -->
+        </nav>
+
+        <!-- MAIN CONTENT AREA -->
+        <main id="main-content" class="main-content">
+            <!-- Dynamic Content Load Here -->
+            <div id="view-container"></div>
+        </main>
+
+        <!-- FOOTER / SCADA STATUS BAR -->
+        <footer class="main-footer">
+            <div class="footer-section">
+                <span>COMUN</span>
+            </div>
+            <div class="footer-section">
+                <span>ALARMA</span>
+            </div>
+            <div class="footer-section unit-status">
+                <div>SEHUENCAS</div>
+                <div>10.1 MW</div>
+                <div>4.8 MVAr</div>
+            </div>
+            <div class="footer-section unit-status">
+                <div>JUNTAS</div>
+                <div>10.130 MW</div>
+                <div>4.827 MVAr</div>
+            </div>
+            <div class="footer-section unit-status">
+                <div>ENBALSE</div>
+                <div>0.000 MW</div>
+                <div>0.000 MVAr</div>
+            </div>
+            <div class="footer-section system-msg">
+                <span>Generacion</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

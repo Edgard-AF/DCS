@@ -169,8 +169,15 @@ function renderAllNavLevels() {
 
 const IMAGE_MAP = {
     // SERVICIOS GENERALES
+    "SERVICIOS GENERALES": ["0020vista general.jpg"],
     "SERVICIOS GENERALES|Principal": ["A2.jpg"],
     "SERVICIOS GENERALES|Generador Diesel": ["2060 grupodiesel.png"],
+
+    // SEHUENCAS
+    "SEHUENCAS": ["0020vista general.jpg"],
+
+    // JUNTAS
+    "JUNTAS": ["0020vista general.jpg"],
 
     // JUNTAS - 2000 SSGG
     "JUNTAS|2000 SSGG": ["0020vista general.jpg"],
@@ -208,6 +215,9 @@ const IMAGE_MAP = {
     "JUNTAS|2200 Grupo 2|2220 Secuencias": ["2220 Secuencias.jpg"],
     "JUNTAS|2200 Grupo 2|2230 Turbina": ["2230 Turbina.jpg"],
     "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"],
+
+    // EMBALSE
+    "EMBALSE": ["0020vista general.jpg"],
 
     // Default / Example for others
     "EMBALSE|Principal": ["A2.jpg"]

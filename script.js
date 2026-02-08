@@ -168,14 +168,14 @@ function renderAllNavLevels() {
 }
 
 const SSGG_IMAGE_MAP = {
-    "2020 Unifilar": ["0020unifilar.jpg", "A2.jpg", "7A.jpg"],
-    "2020 Secuencias": ["2020 Secuencias.png", "18C.jpg"],
-    "2030 Camara Val": ["2030camara val.jpg", "8A.jpg"],
-    "2040 PTA": ["2040 PTA.jpg", "9A.jpg"],
-    "2050 Drenajes": ["2050 Drenajes.jpg", "10A.jpg"],
-    "2060 Grupo Diesel": ["2060 grupodiesel.png", "11A.jpg"],
-    "2070 Toma": ["2070 Toma.png", "12A.jpg"],
-    "2080 Estacion Meteo": ["2080 Estacion Meteo.png", "13A.jpg"]
+    "2020 Unifilar": ["0020unifilar.jpg", "A2.jpg", "10A.jpg"],
+    "2020 Secuencias": ["2020 Secuencias.png", "11A.jpg"],
+    "2030 Camara Val": ["2030camara val.jpg", "12A.jpg"],
+    "2040 PTA": ["2040 PTA.jpg", "13A.jpg"],
+    "2050 Drenajes": ["2050 Drenajes.jpg", "14A.jpg"],
+    "2060 Grupo Diesel": ["2060 grupodiesel.png", "15A.jpg"],
+    "2070 Toma": ["2070 Toma.png", "16A.jpg"],
+    "2080 Estacion Meteo": ["2080 Estacion Meteo.png", "17A.jpg"]
 };
 
 function renderView() {
@@ -227,10 +227,10 @@ function renderImage(container, imageNames) {
                 <img src="${imgPath}" alt="${currentImg}">
             </div>
             ${imageNames.length > 1 ? `
-                <div class="image-nav">
-                    <button class="nav-arrow left" onclick="changeImage(-1)">&#10094;</button>
+                <div class="image-nav-floating">
+                    <button class="nav-arrow" onclick="changeImage(-1)">&#10094;</button>
                     <span class="image-counter">${STATE.currentImageIndex + 1} / ${imageNames.length}</span>
-                    <button class="nav-arrow right" onclick="changeImage(1)">&#10095;</button>
+                    <button class="nav-arrow" onclick="changeImage(1)">&#10095;</button>
                 </div>
             ` : ''}
         </div>

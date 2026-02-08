@@ -61,7 +61,7 @@ const TABS_CONFIG = {
             "2240 Generador": null
         }
     },
-    "ENBALSE": ["Principal", "Alarmas", "Tendencias"]
+    "EMBALSE": ["Principal", "Alarmas", "Tendencias"]
 };
 
 const STATE = {
@@ -210,7 +210,7 @@ const IMAGE_MAP = {
     "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"],
 
     // Default / Example for others
-    "ENBALSE|Principal": ["A2.jpg"]
+    "EMBALSE|Principal": ["A2.jpg"]
 };
 
 function getImagesForCurrentView() {

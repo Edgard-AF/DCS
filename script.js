@@ -67,7 +67,8 @@ const TABS_CONFIG = {
 const STATE = {
     activePrimary: "SERVICIOS GENERALES",
     // Active path tracks the selection depth.
-    activePath: ["Principal"]
+    activePath: ["Principal"],
+    currentImageIndex: 0
 };
 
 function init() {
@@ -93,6 +94,7 @@ function renderPrimaryTabs() {
         li.onclick = () => {
             STATE.activePrimary = key;
             STATE.activePath = []; // No default selection, user must navigate
+            STATE.currentImageIndex = 0; // Reset image index
 
             renderPrimaryTabs();
             renderAllNavLevels();
@@ -145,6 +147,7 @@ function renderAllNavLevels() {
                 const newPath = STATE.activePath.slice(0, depth);
                 newPath.push(item);
                 STATE.activePath = newPath;
+                STATE.currentImageIndex = 0; // Reset image index
 
                 renderAllNavLevels();
                 renderView();
@@ -165,14 +168,14 @@ function renderAllNavLevels() {
 }
 
 const SSGG_IMAGE_MAP = {
-    "2020 Unifilar": "0020unifilar.jpg",
-    "2020 Secuencias": "2020 Secuencias.png",
-    "2030 Camara Val": "2030camara val.jpg",
-    "2040 PTA": "2040 PTA.jpg",
-    "2050 Drenajes": "2050 Drenajes.jpg",
-    "2060 Grupo Diesel": "2060 grupodiesel.png",
-    "2070 Toma": "2070 Toma.png",
-    "2080 Estacion Meteo": "2080 Estacion Meteo.png"
+    "2020 Unifilar": ["0020unifilar.jpg"],
+    "2020 Secuencias": ["2020 Secuencias.png"],
+    "2030 Camara Val": ["2030camara val.jpg"],
+    "2040 PTA": ["2040 PTA.jpg"],
+    "2050 Drenajes": ["2050 Drenajes.jpg"],
+    "2060 Grupo Diesel": ["2060 grupodiesel.png"],
+    "2070 Toma": ["2070 Toma.png"],
+    "2080 Estacion Meteo": ["2080 Estacion Meteo.png"]
 };
 
 function renderView() {
@@ -212,14 +215,45 @@ function renderView() {
     renderPlaceholder(container);
 }
 
-function renderImage(container, imageName) {
-    const imgPath = `assets/${imageName}`;
+function renderImage(container, imageNames) {
+    if (!Array.isArray(imageNames)) imageNames = [imageNames];
+
+    const currentImg = imageNames[STATE.currentImageIndex] || imageNames[0];
+    const imgPath = `assets/${currentImg}`;
+
     container.innerHTML = `
-        <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; overflow: hidden;">
-            <img src="${imgPath}" alt="${imageName}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        <div class="image-viewer-container">
+            <div class="image-display">
+                <img src="${imgPath}" alt="${currentImg}">
+            </div>
+            ${imageNames.length > 1 ? `
+                <div class="image-nav">
+                    <button class="nav-arrow left" onclick="changeImage(-1)">&#10094;</button>
+                    <span class="image-counter">${STATE.currentImageIndex + 1} / ${imageNames.length}</span>
+                    <button class="nav-arrow right" onclick="changeImage(1)">&#10095;</button>
+                </div>
+            ` : ''}
         </div>
     `;
 }
+
+window.changeImage = function (direction) {
+    const p = STATE.activePath;
+    let images = [];
+
+    if (STATE.activePrimary === "JUNTAS") {
+        if (p.length === 1 && p[0] === "2000 SSGG") {
+            images = ["0020vista general.jpg"];
+        } else if (p.length >= 2 && p[0] === "2000 SSGG") {
+            images = SSGG_IMAGE_MAP[p[1]] || [];
+        }
+    }
+
+    if (images.length > 0) {
+        STATE.currentImageIndex = (STATE.currentImageIndex + direction + images.length) % images.length;
+        renderView();
+    }
+};
 
 function renderPlaceholder(container) {
     const pathString = STATE.activePrimary + " > " + STATE.activePath.join(" > ");

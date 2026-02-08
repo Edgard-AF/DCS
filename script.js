@@ -165,6 +165,7 @@ function renderAllNavLevels() {
             currentConfig = null;
         }
     }
+
     const IMAGE_MAP = {
         // SERVICIOS GENERALES
         "SERVICIOS GENERALES|Principal": ["A2.jpg"],
@@ -182,16 +183,30 @@ function renderAllNavLevels() {
         "JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
 
         // JUNTAS - 2100 Grupo 1
-        "JUNTAS|2100 Grupo 1|2115 Valvula Entrada": ["16A.jpg"],
-        "JUNTAS|2100 Grupo 1|2120 Secuencias": ["17A.jpg"],
-        "JUNTAS|2100 Grupo 1|2130 Turbina|2131 Estados": ["7A.jpg"],
-        "JUNTAS|2100 Grupo 1|2130 Turbina|2136 GOPs Turbina": ["8A.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2141 Estados 1": ["10A.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2142 Estados 2": ["11A.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2143 Estados 3": ["12A.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2144 Estados 4": ["13A.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2145 Estados 5": ["14A.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2146 Estados 6": ["15A.jpg"],
+        "JUNTAS|2100 Grupo 1": ["2100 grupo 1 juntas.jpg"],
+        "JUNTAS|2100 Grupo 1|2115 Valvula Entrada": ["2115 Valvula Entrada.jpg"],
+        "JUNTAS|2100 Grupo 1|2120 Secuencias": ["2120 Secuencias.jpg"],
+        "JUNTAS|2100 Grupo 1|2130 Turbina": ["2130 turbina.jpg"],
+        "JUNTAS|2100 Grupo 1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
+        "JUNTAS|2100 Grupo 1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador": ["2140 Generador.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
+        "JUNTAS|2100 Grupo 1|2150 Extincion": ["2150 Extincion.jpg"],
+        "JUNTAS|2100 Grupo 1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
+
+        // JUNTAS - 2200 Grupo 2
+        "JUNTAS|2200 Grupo 2": ["2200 GRUPO 2.jpg"],
+        "JUNTAS|2200 Grupo 2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
+        "JUNTAS|2200 Grupo 2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
+        "JUNTAS|2200 Grupo 2|2220 Secuencias": ["2220 Secuencias.jpg"],
+        "JUNTAS|2200 Grupo 2|2230 Turbina": ["2230 Turbina.jpg"],
+        "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"],
 
         // Default / Example for others
         "ENBALSE|Principal": ["A2.jpg"]

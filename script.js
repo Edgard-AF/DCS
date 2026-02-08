@@ -165,91 +165,92 @@ function renderAllNavLevels() {
             currentConfig = null;
         }
     }
+}
 
-    const IMAGE_MAP = {
-        // SERVICIOS GENERALES
-        "SERVICIOS GENERALES|Principal": ["A2.jpg"],
-        "SERVICIOS GENERALES|Generador Diesel": ["2060 grupodiesel.png"],
+const IMAGE_MAP = {
+    // SERVICIOS GENERALES
+    "SERVICIOS GENERALES|Principal": ["A2.jpg"],
+    "SERVICIOS GENERALES|Generador Diesel": ["2060 grupodiesel.png"],
 
-        // JUNTAS - 2000 SSGG
-        "JUNTAS|2000 SSGG": ["0020vista general.jpg"],
-        "JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
-        "JUNTAS|2000 SSGG|2020 Secuencias": ["2020 Secuencias.png"],
-        "JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
-        "JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
-        "JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
-        "JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
-        "JUNTAS|2000 SSGG|2070 Toma": ["2070 Toma.png"],
-        "JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
+    // JUNTAS - 2000 SSGG
+    "JUNTAS|2000 SSGG": ["0020vista general.jpg"],
+    "JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
+    "JUNTAS|2000 SSGG|2020 Secuencias": ["2020 Secuencias.png"],
+    "JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
+    "JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
+    "JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
+    "JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
+    "JUNTAS|2000 SSGG|2070 Toma": ["2070 Toma.png"],
+    "JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
 
-        // JUNTAS - 2100 Grupo 1
-        "JUNTAS|2100 Grupo 1": ["2100 grupo 1 juntas.jpg"],
-        "JUNTAS|2100 Grupo 1|2115 Valvula Entrada": ["2115 Valvula Entrada.jpg"],
-        "JUNTAS|2100 Grupo 1|2120 Secuencias": ["2120 Secuencias.jpg"],
-        "JUNTAS|2100 Grupo 1|2130 Turbina": ["2130 turbina.jpg"],
-        "JUNTAS|2100 Grupo 1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
-        "JUNTAS|2100 Grupo 1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador": ["2140 Generador.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
-        "JUNTAS|2100 Grupo 1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
-        "JUNTAS|2100 Grupo 1|2150 Extincion": ["2150 Extincion.jpg"],
-        "JUNTAS|2100 Grupo 1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
+    // JUNTAS - 2100 Grupo 1
+    "JUNTAS|2100 Grupo 1": ["2100 grupo 1 juntas.jpg"],
+    "JUNTAS|2100 Grupo 1|2115 Valvula Entrada": ["2115 Valvula Entrada.jpg"],
+    "JUNTAS|2100 Grupo 1|2120 Secuencias": ["2120 Secuencias.jpg"],
+    "JUNTAS|2100 Grupo 1|2130 Turbina": ["2130 turbina.jpg"],
+    "JUNTAS|2100 Grupo 1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
+    "JUNTAS|2100 Grupo 1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador": ["2140 Generador.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
+    "JUNTAS|2100 Grupo 1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
+    "JUNTAS|2100 Grupo 1|2150 Extincion": ["2150 Extincion.jpg"],
+    "JUNTAS|2100 Grupo 1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
 
-        // JUNTAS - 2200 Grupo 2
-        "JUNTAS|2200 Grupo 2": ["2200 GRUPO 2.jpg"],
-        "JUNTAS|2200 Grupo 2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
-        "JUNTAS|2200 Grupo 2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
-        "JUNTAS|2200 Grupo 2|2220 Secuencias": ["2220 Secuencias.jpg"],
-        "JUNTAS|2200 Grupo 2|2230 Turbina": ["2230 Turbina.jpg"],
-        "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"],
+    // JUNTAS - 2200 Grupo 2
+    "JUNTAS|2200 Grupo 2": ["2200 GRUPO 2.jpg"],
+    "JUNTAS|2200 Grupo 2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
+    "JUNTAS|2200 Grupo 2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
+    "JUNTAS|2200 Grupo 2|2220 Secuencias": ["2220 Secuencias.jpg"],
+    "JUNTAS|2200 Grupo 2|2230 Turbina": ["2230 Turbina.jpg"],
+    "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"],
 
-        // Default / Example for others
-        "ENBALSE|Principal": ["A2.jpg"]
-    };
+    // Default / Example for others
+    "ENBALSE|Principal": ["A2.jpg"]
+};
 
-    function getImagesForCurrentView() {
-        const key = [STATE.activePrimary, ...STATE.activePath].join('|');
-        return IMAGE_MAP[key] || null;
+function getImagesForCurrentView() {
+    const key = [STATE.activePrimary, ...STATE.activePath].join('|');
+    return IMAGE_MAP[key] || null;
+}
+
+function renderView() {
+    const container = document.getElementById('view-container');
+    container.innerHTML = '';
+
+    const p = STATE.activePath;
+
+    // Special case for JUNTAS - Hidrostatico (Custom Schematic)
+    if (STATE.activePrimary === "JUNTAS" &&
+        p.length === 3 &&
+        p[0] === "2100 Grupo 1" &&
+        p[1] === "2140 Generador" &&
+        p[2] === "2149 Hidrostatico") {
+        renderSchematic(container);
+        return;
     }
 
-    function renderView() {
-        const container = document.getElementById('view-container');
-        container.innerHTML = '';
-
-        const p = STATE.activePath;
-
-        // Special case for JUNTAS - Hidrostatico (Custom Schematic)
-        if (STATE.activePrimary === "JUNTAS" &&
-            p.length === 3 &&
-            p[0] === "2100 Grupo 1" &&
-            p[1] === "2140 Generador" &&
-            p[2] === "2149 Hidrostatico") {
-            renderSchematic(container);
-            return;
-        }
-
-        // Dynamic Image Lookup
-        const images = getImagesForCurrentView();
-        if (images) {
-            renderImage(container, images);
-            return;
-        }
-
-        renderPlaceholder(container);
+    // Dynamic Image Lookup
+    const images = getImagesForCurrentView();
+    if (images) {
+        renderImage(container, images);
+        return;
     }
 
-    function renderImage(container, imageNames) {
-        if (!Array.isArray(imageNames)) imageNames = [imageNames];
+    renderPlaceholder(container);
+}
 
-        const currentImg = imageNames[STATE.currentImageIndex] || imageNames[0];
-        const imgPath = `assets/${currentImg}`;
+function renderImage(container, imageNames) {
+    if (!Array.isArray(imageNames)) imageNames = [imageNames];
 
-        container.innerHTML = `
+    const currentImg = imageNames[STATE.currentImageIndex] || imageNames[0];
+    const imgPath = `assets/${currentImg}`;
+
+    container.innerHTML = `
         <div class="image-viewer-container">
             <div class="image-display">
                 <img src="${imgPath}" alt="${currentImg}">
@@ -263,32 +264,32 @@ function renderAllNavLevels() {
             ` : ''}
         </div>
     `;
+}
+
+window.changeImage = function (direction) {
+    const images = getImagesForCurrentView();
+    if (images && images.length > 0) {
+        STATE.currentImageIndex = (STATE.currentImageIndex + direction + images.length) % images.length;
+        renderView();
     }
+};
 
-    window.changeImage = function (direction) {
-        const images = getImagesForCurrentView();
-        if (images && images.length > 0) {
-            STATE.currentImageIndex = (STATE.currentImageIndex + direction + images.length) % images.length;
-            renderView();
-        }
-    };
-
-    function renderPlaceholder(container) {
-        const pathString = STATE.activePrimary + " > " + STATE.activePath.join(" > ");
-        const div = document.createElement('div');
-        div.className = 'placeholder-view';
-        div.innerHTML = `
+function renderPlaceholder(container) {
+    const pathString = STATE.activePrimary + " > " + STATE.activePath.join(" > ");
+    const div = document.createElement('div');
+    div.className = 'placeholder-view';
+    div.innerHTML = `
         <div style="text-align: center;">
             <h2 style="color: #fff;">${STATE.activePrimary}</h2>
             <h3 style="color: #00aaff; margin-top: 10px;">${STATE.activePath.join(" / ")}</h3>
             <p style="margin-top: 20px;">Vista no implementada.</p>
         </div>
     `;
-        container.appendChild(div);
-    }
+    container.appendChild(div);
+}
 
-    function renderSchematic(container) {
-        container.innerHTML = `
+function renderSchematic(container) {
+    container.innerHTML = `
         <div class="schematic-container" style="position: relative; width: 100%; height: 100%; border: 2px solid #555;">
             
             <!-- SVG Layer for Lines and Connections -->
@@ -473,17 +474,17 @@ function renderAllNavLevels() {
 
         </div>
     `;
-    }
+}
 
-    function startClock() {
-        const update = () => {
-            const now = new Date();
-            document.getElementById('clock').textContent = now.toLocaleTimeString('es-ES');
-            document.getElementById('date').textContent = now.toLocaleDateString('es-ES');
-        };
-        update();
-        setInterval(update, 1000);
-    }
+function startClock() {
+    const update = () => {
+        const now = new Date();
+        document.getElementById('clock').textContent = now.toLocaleTimeString('es-ES');
+        document.getElementById('date').textContent = now.toLocaleDateString('es-ES');
+    };
+    update();
+    setInterval(update, 1000);
+}
 
-    // Start
-    init();
+// Start
+init();

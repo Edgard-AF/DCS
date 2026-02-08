@@ -67,7 +67,7 @@ const TABS_CONFIG = {
 const STATE = {
     activePrimary: "SERVICIOS GENERALES",
     // Active path tracks the selection depth.
-    activePath: ["Principal"],
+    activePath: [],
     currentImageIndex: 0
 };
 

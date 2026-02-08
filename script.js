@@ -165,63 +165,76 @@ function renderAllNavLevels() {
             currentConfig = null;
         }
     }
-}
+    const IMAGE_MAP = {
+        // SERVICIOS GENERALES
+        "SERVICIOS GENERALES|Principal": ["A2.jpg"],
+        "SERVICIOS GENERALES|Generador Diesel": ["2060 grupodiesel.png"],
 
-const SSGG_IMAGE_MAP = {
-    "2020 Unifilar": ["0020unifilar.jpg", "A2.jpg", "10A.jpg"],
-    "2020 Secuencias": ["2020 Secuencias.png", "11A.jpg"],
-    "2030 Camara Val": ["2030camara val.jpg", "12A.jpg"],
-    "2040 PTA": ["2040 PTA.jpg", "13A.jpg"],
-    "2050 Drenajes": ["2050 Drenajes.jpg", "14A.jpg"],
-    "2060 Grupo Diesel": ["2060 grupodiesel.png", "15A.jpg"],
-    "2070 Toma": ["2070 Toma.png", "16A.jpg"],
-    "2080 Estacion Meteo": ["2080 Estacion Meteo.png", "17A.jpg"]
-};
+        // JUNTAS - 2000 SSGG
+        "JUNTAS|2000 SSGG": ["0020vista general.jpg"],
+        "JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
+        "JUNTAS|2000 SSGG|2020 Secuencias": ["2020 Secuencias.png"],
+        "JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
+        "JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
+        "JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
+        "JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
+        "JUNTAS|2000 SSGG|2070 Toma": ["2070 Toma.png"],
+        "JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
 
-function renderView() {
-    const container = document.getElementById('view-container');
-    container.innerHTML = '';
+        // JUNTAS - 2100 Grupo 1
+        "JUNTAS|2100 Grupo 1|2115 Valvula Entrada": ["16A.jpg"],
+        "JUNTAS|2100 Grupo 1|2120 Secuencias": ["17A.jpg"],
+        "JUNTAS|2100 Grupo 1|2130 Turbina|2131 Estados": ["7A.jpg"],
+        "JUNTAS|2100 Grupo 1|2130 Turbina|2136 GOPs Turbina": ["8A.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2141 Estados 1": ["10A.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2142 Estados 2": ["11A.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2143 Estados 3": ["12A.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2144 Estados 4": ["13A.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2145 Estados 5": ["14A.jpg"],
+        "JUNTAS|2100 Grupo 1|2140 Generador|2146 Estados 6": ["15A.jpg"],
 
-    const p = STATE.activePath;
+        // Default / Example for others
+        "ENBALSE|Principal": ["A2.jpg"]
+    };
 
-    // Check for 2000 SSGG images
-    if (STATE.activePrimary === "JUNTAS") {
-        // Special case for the "2000 SSGG" parent item
-        if (p.length === 1 && p[0] === "2000 SSGG") {
-            renderImage(container, "0020vista general.jpg");
+    function getImagesForCurrentView() {
+        const key = [STATE.activePrimary, ...STATE.activePath].join('|');
+        return IMAGE_MAP[key] || null;
+    }
+
+    function renderView() {
+        const container = document.getElementById('view-container');
+        container.innerHTML = '';
+
+        const p = STATE.activePath;
+
+        // Special case for JUNTAS - Hidrostatico (Custom Schematic)
+        if (STATE.activePrimary === "JUNTAS" &&
+            p.length === 3 &&
+            p[0] === "2100 Grupo 1" &&
+            p[1] === "2140 Generador" &&
+            p[2] === "2149 Hidrostatico") {
+            renderSchematic(container);
             return;
         }
 
-        if (p.length >= 2 && p[0] === "2000 SSGG") {
-            const subMenuItem = p[1];
-            if (SSGG_IMAGE_MAP[subMenuItem]) {
-                renderImage(container, SSGG_IMAGE_MAP[subMenuItem]);
-                return;
-            }
+        // Dynamic Image Lookup
+        const images = getImagesForCurrentView();
+        if (images) {
+            renderImage(container, images);
+            return;
         }
+
+        renderPlaceholder(container);
     }
 
-    // Specific logic for JUNTAS - Hidrostatico based on user request to have this deep structure in JUNTAS
-    // Path (updated for JUNTAS): 2100 Grupo 1 > 2140 Generador > 2149 Hidrostatico
-    if (STATE.activePrimary === "JUNTAS" &&
-        p.length === 3 &&
-        p[0] === "2100 Grupo 1" &&
-        p[1] === "2140 Generador" &&
-        p[2] === "2149 Hidrostatico") {
-        renderSchematic(container);
-        return;
-    }
+    function renderImage(container, imageNames) {
+        if (!Array.isArray(imageNames)) imageNames = [imageNames];
 
-    renderPlaceholder(container);
-}
+        const currentImg = imageNames[STATE.currentImageIndex] || imageNames[0];
+        const imgPath = `assets/${currentImg}`;
 
-function renderImage(container, imageNames) {
-    if (!Array.isArray(imageNames)) imageNames = [imageNames];
-
-    const currentImg = imageNames[STATE.currentImageIndex] || imageNames[0];
-    const imgPath = `assets/${currentImg}`;
-
-    container.innerHTML = `
+        container.innerHTML = `
         <div class="image-viewer-container">
             <div class="image-display">
                 <img src="${imgPath}" alt="${currentImg}">
@@ -235,42 +248,32 @@ function renderImage(container, imageNames) {
             ` : ''}
         </div>
     `;
-}
+    }
 
-window.changeImage = function (direction) {
-    const p = STATE.activePath;
-    let images = [];
-
-    if (STATE.activePrimary === "JUNTAS") {
-        if (p.length === 1 && p[0] === "2000 SSGG") {
-            images = ["0020vista general.jpg"];
-        } else if (p.length >= 2 && p[0] === "2000 SSGG") {
-            images = SSGG_IMAGE_MAP[p[1]] || [];
+    window.changeImage = function (direction) {
+        const images = getImagesForCurrentView();
+        if (images && images.length > 0) {
+            STATE.currentImageIndex = (STATE.currentImageIndex + direction + images.length) % images.length;
+            renderView();
         }
-    }
+    };
 
-    if (images.length > 0) {
-        STATE.currentImageIndex = (STATE.currentImageIndex + direction + images.length) % images.length;
-        renderView();
-    }
-};
-
-function renderPlaceholder(container) {
-    const pathString = STATE.activePrimary + " > " + STATE.activePath.join(" > ");
-    const div = document.createElement('div');
-    div.className = 'placeholder-view';
-    div.innerHTML = `
+    function renderPlaceholder(container) {
+        const pathString = STATE.activePrimary + " > " + STATE.activePath.join(" > ");
+        const div = document.createElement('div');
+        div.className = 'placeholder-view';
+        div.innerHTML = `
         <div style="text-align: center;">
             <h2 style="color: #fff;">${STATE.activePrimary}</h2>
             <h3 style="color: #00aaff; margin-top: 10px;">${STATE.activePath.join(" / ")}</h3>
             <p style="margin-top: 20px;">Vista no implementada.</p>
         </div>
     `;
-    container.appendChild(div);
-}
+        container.appendChild(div);
+    }
 
-function renderSchematic(container) {
-    container.innerHTML = `
+    function renderSchematic(container) {
+        container.innerHTML = `
         <div class="schematic-container" style="position: relative; width: 100%; height: 100%; border: 2px solid #555;">
             
             <!-- SVG Layer for Lines and Connections -->
@@ -455,17 +458,17 @@ function renderSchematic(container) {
 
         </div>
     `;
-}
+    }
 
-function startClock() {
-    const update = () => {
-        const now = new Date();
-        document.getElementById('clock').textContent = now.toLocaleTimeString('es-ES');
-        document.getElementById('date').textContent = now.toLocaleDateString('es-ES');
-    };
-    update();
-    setInterval(update, 1000);
-}
+    function startClock() {
+        const update = () => {
+            const now = new Date();
+            document.getElementById('clock').textContent = now.toLocaleTimeString('es-ES');
+            document.getElementById('date').textContent = now.toLocaleDateString('es-ES');
+        };
+        update();
+        setInterval(update, 1000);
+    }
 
-// Start
-init();
+    // Start
+    init();

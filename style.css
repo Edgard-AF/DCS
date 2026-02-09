@@ -238,7 +238,7 @@ body {
 
 /* FOOTER */
 .main-footer {
-    height: 50px;
+    height: 70px;
     background-color: #000;
     border-top: 1px solid #444;
     display: flex;
@@ -251,7 +251,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 80px;
+    min-width: 120px;
     font-size: 0.7rem;
     color: #aaa;
     background: #0b0b0b;

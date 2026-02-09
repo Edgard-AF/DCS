@@ -1,5 +1,5 @@
 const TABS_CONFIG = {
-    "SERVICIOS GENERALES": ["Principal", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
+    "PRESA": ["Principal", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
     "SEHUENCAS": ["Principal", "Alarmas", "Tendencias"],
     "JUNTAS": {
         "2000 SSGG": {
@@ -60,12 +60,11 @@ const TABS_CONFIG = {
             "2230 Turbina": null,
             "2240 Generador": null
         }
-    },
-    "EMBALSE": ["Principal", "Alarmas", "Tendencias"]
+    }
 };
 
 const STATE = {
-    activePrimary: "SERVICIOS GENERALES",
+    activePrimary: "PRESA",
     // Active path tracks the selection depth.
     activePath: [],
     currentImageIndex: 0
@@ -168,10 +167,10 @@ function renderAllNavLevels() {
 }
 
 const IMAGE_MAP = {
-    // SERVICIOS GENERALES
-    "SERVICIOS GENERALES": ["0020vista general.jpg"],
-    "SERVICIOS GENERALES|Principal": ["A2.jpg"],
-    "SERVICIOS GENERALES|Generador Diesel": ["2060 grupodiesel.png"],
+    // PRESA
+    "PRESA": ["0020vista general.jpg"],
+    "PRESA|Principal": ["A2.jpg"],
+    "PRESA|Generador Diesel": ["2060 grupodiesel.png"],
 
     // SEHUENCAS
     "SEHUENCAS": ["0020vista general.jpg"],
@@ -214,13 +213,7 @@ const IMAGE_MAP = {
     "JUNTAS|2200 Grupo 2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
     "JUNTAS|2200 Grupo 2|2220 Secuencias": ["2220 Secuencias.jpg"],
     "JUNTAS|2200 Grupo 2|2230 Turbina": ["2230 Turbina.jpg"],
-    "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"],
-
-    // EMBALSE
-    "EMBALSE": ["0020vista general.jpg"],
-
-    // Default / Example for others
-    "EMBALSE|Principal": ["A2.jpg"]
+    "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"]
 };
 
 function getImagesForCurrentView() {

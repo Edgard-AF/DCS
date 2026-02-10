@@ -175,11 +175,11 @@ function renderAllNavLevels() {
 
 const IMAGE_MAP = {
     // VISTA GENERAL
-    "VISTA GENERAL IVIRIZU": ["Juntas.jpg"], // Using Juntas.jpg as a placeholder for general overview if not specified otherwise
+    "VISTA GENERAL IVIRIZU": ["vista general ivirizu.jpg"],
 
     // PRESA
     "VISTA GENERAL IVIRIZU|PRESA": ["0020vista general.jpg"],
-    "VISTA GENERAL IVIRIZU|PRESA|Torre de Captacion": ["A2.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Torre de Captacion": ["torre_de_captacion.jpg"],
     "VISTA GENERAL IVIRIZU|PRESA|Generador Diesel": ["2060 grupodiesel.png"],
 
     // SEHUENCAS

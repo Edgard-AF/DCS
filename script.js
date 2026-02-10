@@ -29,20 +29,20 @@ const TABS_CONFIG = {
                     "0026 SSGG Tableros": null,
                     "0029 Totalizadores": null
                 },
-                "SMEC": null,
-                "2030 Camara Val": null,
+                "SMEC/Totalizadores": null,
                 "2040 PTA": {
                     "2041 Agua Potable": null
                 },
                 "2050 Drenajes": null,
                 "2060 Grupo Diesel": null,
-                "2070 Balsa": {
-                    "2071 Azud": null,
-                    "2072 Desarenador": null,
-                    "2073 Balsa": null
-                },
                 "2080 Estacion Meteo": null
             },
+            "2070 Balsa": {
+                "2071 Azud": null,
+                "2072 Desarenador": null,
+                "2073 Balsa": null
+            },
+            "2030 Camara Val": null,
             "2100 Unidad N°1": {
                 "2115 Valvula Esferica": null,
                 "2120 Secuencias": null,
@@ -204,12 +204,12 @@ const IMAGE_MAP = {
     // JUNTAS - 2000 SSGG
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG": ["0020vista general.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
-    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|SMEC": ["smec.jpg"],
-    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|SMEC/Totalizadores": ["smec.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2030 Camara Val": ["2030camara val.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
-    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2070 Balsa": ["2070 Toma.png"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2070 Balsa": ["2070 Toma.png"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
 
     // JUNTAS - 2100 Unidad N°1

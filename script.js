@@ -1,6 +1,6 @@
 const TABS_CONFIG = {
     "VISTA GENERAL IVIRIZU": {
-        "PRESA": ["Parametros", "Torre de Captacion", "Compuertas Taintor", "Desague de Fondo", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
+        "PRESA": ["Parametros", "Torre De Captacion", "Compuertas Taintor", "Desague de Fondo", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
         "SEHUENCAS": ["Principal", "Alarmas", "Tendencias"],
         "JUNTAS": {
             "2000 SSGG": {
@@ -179,8 +179,7 @@ const IMAGE_MAP = {
 
     // PRESA
     "VISTA GENERAL IVIRIZU|PRESA": ["0020vista general.jpg"],
-    "VISTA GENERAL IVIRIZU|PRESA|Torre de Captacion": ["torre_de_captacion.jpg"],
-    "VISTA GENERAL IVIRIZU|PRESA|Generador Diesel": ["2060 grupodiesel.png"],
+    "VISTA GENERAL IVIRIZU|PRESA|Torre De Captacion": ["torre_de_captacion.jpg"],
 
     // SEHUENCAS
     "VISTA GENERAL IVIRIZU|SEHUENCAS": ["Sehuencas.jpg"],

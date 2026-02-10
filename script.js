@@ -178,7 +178,7 @@ const IMAGE_MAP = {
     "VISTA GENERAL IVIRIZU": ["vista general ivirizu.jpg"],
 
     // PRESA
-    "VISTA GENERAL IVIRIZU|PRESA": ["0020vista general.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA": ["Presa.jpg"],
     "VISTA GENERAL IVIRIZU|PRESA|Torre De Captacion": ["torre_de_captacion.jpg"],
 
     // SEHUENCAS

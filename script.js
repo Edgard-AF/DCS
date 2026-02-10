@@ -1,75 +1,77 @@
 const TABS_CONFIG = {
-    "PRESA": ["Principal", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
-    "SEHUENCAS": ["Principal", "Alarmas", "Tendencias"],
-    "JUNTAS": {
-        "2000 SSGG": {
-            "2020 Unifilar": {
-                "0211 Grupo 1": {
-                    "0211 CCM 21BMA10": null,
-                    "0212 CCM 21BMA10": null,
-                    "0218 Tableros": null
+    "VISTA GENERAL IVIRIZU": {
+        "PRESA": ["Parametros", "Torre de Captacion", "Compuertas Taintor", "Desague de Fondo", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
+        "SEHUENCAS": ["Principal", "Alarmas", "Tendencias"],
+        "JUNTAS": {
+            "2000 SSGG": {
+                "2020 Unifilar": {
+                    "Unidad N°1": {
+                        "0211 CCM 21BMA10": null,
+                        "0212 CCM 21BMA10": null,
+                        "0218 Tableros": null
+                    },
+                    "Unidad N°2": {
+                        "0221 CCM 22BMA10": null,
+                        "0222 CCM 22BMA10": null,
+                        "0228 Tableros": null
+                    },
+                    "0023 SSGG 20BMB10": null,
+                    "0024 SSGG 20BMB10": null,
+                    "0025 SSGG 20BMB10": null,
+                    "0026 SSGG Tableros": null,
+                    "0029 Totalizadores": null
                 },
-                "0221 Grupo 2": {
-                    "0221 CCM 22BMA10": null,
-                    "0222 CCM 22BMA10": null,
-                    "0228 Tableros": null
+                "2020 Secuencias": null,
+                "2030 Camara Val": null,
+                "2040 PTA": {
+                    "2041 Agua Potable": null
                 },
-                "0023 SSGG 20BMB10": null,
-                "0024 SSGG 20BMB10": null,
-                "0025 SSGG 20BMB10": null,
-                "0026 SSGG Tableros": null,
-                "0029 Totalizadores": null
+                "2050 Drenajes": null,
+                "2060 Grupo Diesel": null,
+                "2070 Balsa": {
+                    "2071 Azud": null,
+                    "2072 Desarenador": null,
+                    "2073 Balsa": null
+                },
+                "2080 Estacion Meteo": null
             },
-            "2020 Secuencias": null,
-            "2030 Camara Val": null,
-            "2040 PTA": {
-                "2041 Agua Potable": null
+            "2100 Unidad N°1": {
+                "2115 Valvula Esferica": null,
+                "2120 Secuencias": null,
+                "2130 Turbina": {
+                    "2131 Estados": null,
+                    "2136 GOPs Turbina": null
+                },
+                "2140 Generador": {
+                    "Curva de Capabilidad": null,
+                    "2141 Estados 1": null,
+                    "2142 Estados 2": null,
+                    "2143 Estados 3": null,
+                    "2144 Estados 4": null,
+                    "2145 Estados 5": null,
+                    "2146 Estados 6": null,
+                    "2149 Hidrostatico": null
+                },
+                "2150 Extincion": null,
+                "2160 Refrigeracion": null,
+                "Alarmas": null,
+                "Eventos": null,
+                "Tendencias": null,
+                "Mandos": null
             },
-            "2050 Drenajes": null,
-            "2060 Grupo Diesel": null,
-            "2070 Balsa": {
-                "2071 Azud": null,
-                "2072 Desarenador": null,
-                "2073 Balsa": null
-            },
-            "2080 Estacion Meteo": null
-        },
-        "2100 Unidad N°1": {
-            "2115 Valvula Esferica": null,
-            "2120 Secuencias": null,
-            "2130 Turbina": {
-                "2131 Estados": null,
-                "2136 GOPs Turbina": null
-            },
-            "2140 Generador": {
-                "Curva de Capabilidad": null,
-                "2141 Estados 1": null,
-                "2142 Estados 2": null,
-                "2143 Estados 3": null,
-                "2144 Estados 4": null,
-                "2145 Estados 5": null,
-                "2146 Estados 6": null,
-                "2149 Hidrostatico": null
-            },
-            "2150 Extincion": null,
-            "2160 Refrigeracion": null,
-            "Alarmas": null,
-            "Eventos": null,
-            "Tendencias": null,
-            "Mandos": null
-        },
-        "2200 Unidad N°2": {
-            "2210 Sala Electrica": null,
-            "2215 Valvula Esferica": null,
-            "2220 Secuencias": null,
-            "2230 Turbina": null,
-            "2240 Generador": null
+            "2200 Unidad N°2": {
+                "2210 Sala Electrica": null,
+                "2215 Valvula Esferica": null,
+                "2220 Secuencias": null,
+                "2230 Turbina": null,
+                "2240 Generador": null
+            }
         }
     }
 };
 
 const STATE = {
-    activePrimary: "PRESA",
+    activePrimary: "VISTA GENERAL IVIRIZU",
     // Active path tracks the selection depth.
     activePath: [],
     currentImageIndex: 0
@@ -172,54 +174,57 @@ function renderAllNavLevels() {
 }
 
 const IMAGE_MAP = {
+    // VISTA GENERAL
+    "VISTA GENERAL IVIRIZU": ["Juntas.jpg"], // Using Juntas.jpg as a placeholder for general overview if not specified otherwise
+
     // PRESA
-    "PRESA": ["0020vista general.jpg"],
-    "PRESA|Principal": ["A2.jpg"],
-    "PRESA|Generador Diesel": ["2060 grupodiesel.png"],
+    "VISTA GENERAL IVIRIZU|PRESA": ["0020vista general.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Torre de Captacion": ["A2.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Generador Diesel": ["2060 grupodiesel.png"],
 
     // SEHUENCAS
-    "SEHUENCAS": ["Sehuencas.jpg"],
+    "VISTA GENERAL IVIRIZU|SEHUENCAS": ["Sehuencas.jpg"],
 
     // JUNTAS
-    "JUNTAS": ["Juntas.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS": ["Juntas.jpg"],
 
     // JUNTAS - 2000 SSGG
-    "JUNTAS|2000 SSGG": ["0020vista general.jpg"],
-    "JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
-    "JUNTAS|2000 SSGG|2020 Secuencias": ["2020 Secuencias.png"],
-    "JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
-    "JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
-    "JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
-    "JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
-    "JUNTAS|2000 SSGG|2070 Balsa": ["2070 Toma.png"],
-    "JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG": ["0020vista general.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2020 Secuencias": ["2020 Secuencias.png"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2070 Balsa": ["2070 Toma.png"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
 
-    // JUNTAS - 2100 Grupo 1
-    "JUNTAS|2100 Unidad N°1": ["2100 grupo 1 juntas.jpg"],
-    "JUNTAS|2100 Unidad N°1|2115 Valvula Esferica": ["2115 Valvula Entrada.jpg"],
-    "JUNTAS|2100 Unidad N°1|2120 Secuencias": ["2120 Secuencias.jpg"],
-    "JUNTAS|2100 Unidad N°1|2130 Turbina": ["2130 turbina.jpg"],
-    "JUNTAS|2100 Unidad N°1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
-    "JUNTAS|2100 Unidad N°1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador": ["2140 Generador.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|Curva de Capabilidad": ["curva de capabilidad.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
-    "JUNTAS|2100 Unidad N°1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
-    "JUNTAS|2100 Unidad N°1|2150 Extincion": ["2150 Extincion.jpg"],
-    "JUNTAS|2100 Unidad N°1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
+    // JUNTAS - 2100 Unidad N°1
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1": ["2100 grupo 1 juntas.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2115 Valvula Esferica": ["2115 Valvula Entrada.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2120 Secuencias": ["2120 Secuencias.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2130 Turbina": ["2130 turbina.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador": ["2140 Generador.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|Curva de Capabilidad": ["curva de capabilidad.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2150 Extincion": ["2150 Extincion.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2100 Unidad N°1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
 
-    // JUNTAS - 2200 Grupo 2
-    "JUNTAS|2200 Unidad N°2": ["2200 GRUPO 2.jpg"],
-    "JUNTAS|2200 Unidad N°2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
-    "JUNTAS|2200 Unidad N°2|2215 Valvula Esferica": ["2215 Valvula Entrada.jpg"],
-    "JUNTAS|2200 Unidad N°2|2220 Secuencias": ["2220 Secuencias.jpg"],
-    "JUNTAS|2200 Unidad N°2|2230 Turbina": ["2230 Turbina.jpg"],
-    "JUNTAS|2200 Unidad N°2|2240 Generador": ["2240 Generador.jpg"]
+    // JUNTAS - 2200 Unidad N°2
+    "VISTA GENERAL IVIRIZU|JUNTAS|2200 Unidad N°2": ["2200 GRUPO 2.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2200 Unidad N°2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2200 Unidad N°2|2215 Valvula Esferica": ["2215 Valvula Entrada.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2200 Unidad N°2|2220 Secuencias": ["2220 Secuencias.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2200 Unidad N°2|2230 Turbina": ["2230 Turbina.jpg"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2200 Unidad N°2|2240 Generador": ["2240 Generador.jpg"]
 };
 
 function getImagesForCurrentView() {
@@ -234,11 +239,12 @@ function renderView() {
     const p = STATE.activePath;
 
     // Special case for JUNTAS - Hidrostatico (Custom Schematic)
-    if (STATE.activePrimary === "JUNTAS" &&
-        p.length === 3 &&
-        p[0] === "2100 Unidad N°1" &&
-        p[1] === "2140 Generador" &&
-        p[2] === "2149 Hidrostatico") {
+    if (STATE.activePrimary === "VISTA GENERAL IVIRIZU" &&
+        p.length === 4 &&
+        p[0] === "JUNTAS" &&
+        p[1] === "2100 Unidad N°1" &&
+        p[2] === "2140 Generador" &&
+        p[3] === "2149 Hidrostatico") {
         renderSchematic(container);
         return;
     }

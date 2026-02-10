@@ -27,14 +27,14 @@ const TABS_CONFIG = {
             },
             "2050 Drenajes": null,
             "2060 Grupo Diesel": null,
-            "2070 Toma": {
+            "2070 Balsa": {
                 "2071 Azud": null,
                 "2072 Desarenador": null,
                 "2073 Balsa": null
             },
             "2080 Estacion Meteo": null
         },
-        "2100 Grupo 1": {
+        "2100 Unidad N°1": {
             "2115 Valvula Entrada": null,
             "2120 Secuencias": null,
             "2130 Turbina": {
@@ -42,6 +42,7 @@ const TABS_CONFIG = {
                 "2136 GOPs Turbina": null
             },
             "2140 Generador": {
+                "Curva de Capabilidad": null,
                 "2141 Estados 1": null,
                 "2142 Estados 2": null,
                 "2143 Estados 3": null,
@@ -51,9 +52,13 @@ const TABS_CONFIG = {
                 "2149 Hidrostatico": null
             },
             "2150 Extincion": null,
-            "2160 Refrigeracion": null
+            "2160 Refrigeracion": null,
+            "Alarmas": null,
+            "Eventos": null,
+            "Tendencias": null,
+            "Mandos": null
         },
-        "2200 Grupo 2": {
+        "2200 Unidad N°2": {
             "2210 Sala Electrica": null,
             "2215 Valvula Entrada": null,
             "2220 Secuencias": null,
@@ -173,10 +178,10 @@ const IMAGE_MAP = {
     "PRESA|Generador Diesel": ["2060 grupodiesel.png"],
 
     // SEHUENCAS
-    "SEHUENCAS": ["0020vista general.jpg"],
+    "SEHUENCAS": ["Sehuencas.jpg"],
 
     // JUNTAS
-    "JUNTAS": ["0020vista general.jpg"],
+    "JUNTAS": ["Juntas.jpg"],
 
     // JUNTAS - 2000 SSGG
     "JUNTAS|2000 SSGG": ["0020vista general.jpg"],
@@ -186,34 +191,35 @@ const IMAGE_MAP = {
     "JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
     "JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],
     "JUNTAS|2000 SSGG|2060 Grupo Diesel": ["2060 grupodiesel.png"],
-    "JUNTAS|2000 SSGG|2070 Toma": ["2070 Toma.png"],
+    "JUNTAS|2000 SSGG|2070 Balsa": ["2070 Toma.png"],
     "JUNTAS|2000 SSGG|2080 Estacion Meteo": ["2080 Estacion Meteo.png"],
 
     // JUNTAS - 2100 Grupo 1
-    "JUNTAS|2100 Grupo 1": ["2100 grupo 1 juntas.jpg"],
-    "JUNTAS|2100 Grupo 1|2115 Valvula Entrada": ["2115 Valvula Entrada.jpg"],
-    "JUNTAS|2100 Grupo 1|2120 Secuencias": ["2120 Secuencias.jpg"],
-    "JUNTAS|2100 Grupo 1|2130 Turbina": ["2130 turbina.jpg"],
-    "JUNTAS|2100 Grupo 1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
-    "JUNTAS|2100 Grupo 1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador": ["2140 Generador.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
-    "JUNTAS|2100 Grupo 1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
-    "JUNTAS|2100 Grupo 1|2150 Extincion": ["2150 Extincion.jpg"],
-    "JUNTAS|2100 Grupo 1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
+    "JUNTAS|2100 Unidad N°1": ["2100 grupo 1 juntas.jpg"],
+    "JUNTAS|2100 Unidad N°1|2115 Valvula Entrada": ["2115 Valvula Entrada.jpg"],
+    "JUNTAS|2100 Unidad N°1|2120 Secuencias": ["2120 Secuencias.jpg"],
+    "JUNTAS|2100 Unidad N°1|2130 Turbina": ["2130 turbina.jpg"],
+    "JUNTAS|2100 Unidad N°1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
+    "JUNTAS|2100 Unidad N°1|2130 Turbina|2136 GOPs Turbina": ["2135 GOP a Turbina.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador": ["2140 Generador.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|Curva de Capabilidad": ["curva de capabilidad.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2141 Estados 1": ["2141 Estados 1.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2142 Estados 2": ["2142 Estados 2.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2143 Estados 3": ["2143 Estados 3.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2144 Estados 4": ["2144 Estados 4.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2145 Estados 5": ["2145 Estados 5.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2146 Estados 6": ["2144 Estados 6.jpg"],
+    "JUNTAS|2100 Unidad N°1|2140 Generador|2149 Hidrostatico": ["2149 Hidrostatico.jpg"],
+    "JUNTAS|2100 Unidad N°1|2150 Extincion": ["2150 Extincion.jpg"],
+    "JUNTAS|2100 Unidad N°1|2160 Refrigeracion": ["2160 Refrigeracion.jpg"],
 
     // JUNTAS - 2200 Grupo 2
-    "JUNTAS|2200 Grupo 2": ["2200 GRUPO 2.jpg"],
-    "JUNTAS|2200 Grupo 2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
-    "JUNTAS|2200 Grupo 2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
-    "JUNTAS|2200 Grupo 2|2220 Secuencias": ["2220 Secuencias.jpg"],
-    "JUNTAS|2200 Grupo 2|2230 Turbina": ["2230 Turbina.jpg"],
-    "JUNTAS|2200 Grupo 2|2240 Generador": ["2240 Generador.jpg"]
+    "JUNTAS|2200 Unidad N°2": ["2200 GRUPO 2.jpg"],
+    "JUNTAS|2200 Unidad N°2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
+    "JUNTAS|2200 Unidad N°2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
+    "JUNTAS|2200 Unidad N°2|2220 Secuencias": ["2220 Secuencias.jpg"],
+    "JUNTAS|2200 Unidad N°2|2230 Turbina": ["2230 Turbina.jpg"],
+    "JUNTAS|2200 Unidad N°2|2240 Generador": ["2240 Generador.jpg"]
 };
 
 function getImagesForCurrentView() {
@@ -230,7 +236,7 @@ function renderView() {
     // Special case for JUNTAS - Hidrostatico (Custom Schematic)
     if (STATE.activePrimary === "JUNTAS" &&
         p.length === 3 &&
-        p[0] === "2100 Grupo 1" &&
+        p[0] === "2100 Unidad N°1" &&
         p[1] === "2140 Generador" &&
         p[2] === "2149 Hidrostatico") {
         renderSchematic(container);

@@ -1,6 +1,6 @@
 const TABS_CONFIG = {
     "VISTA GENERAL IVIRIZU": {
-        "PRESA": ["Parametros", "Torre De Captacion", "Compuertas Taintor", "Desague de Fondo", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
+        "PRESA": ["Parametros", "Torre de Captacion", "Compuertas Taintor", "Desague de Fondo", "Generador Diesel", "Transformadores", "Distribucion AC/DC"],
         "SEHUENCAS": ["Principal", "Alarmas", "Tendencias"],
         "JUNTAS": {
             "2000 SSGG": {
@@ -21,7 +21,7 @@ const TABS_CONFIG = {
                     "0026 SSGG Tableros": null,
                     "0029 Totalizadores": null
                 },
-                "2020 Secuencias": null,
+                "SMEC": null,
                 "2030 Camara Val": null,
                 "2040 PTA": {
                     "2041 Agua Potable": null
@@ -179,7 +179,13 @@ const IMAGE_MAP = {
 
     // PRESA
     "VISTA GENERAL IVIRIZU|PRESA": ["Presa.jpg"],
-    "VISTA GENERAL IVIRIZU|PRESA|Torre De Captacion": ["torre_de_captacion.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Parametros": ["11A.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Torre de Captacion": ["torre_de_captacion.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Compuertas Taintor": ["13A.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Desague de Fondo": ["14A.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Generador Diesel": ["2060 grupodiesel.png"],
+    "VISTA GENERAL IVIRIZU|PRESA|Transformadores": ["15A.jpg"],
+    "VISTA GENERAL IVIRIZU|PRESA|Distribucion AC/DC": ["16A.jpg"],
 
     // SEHUENCAS
     "VISTA GENERAL IVIRIZU|SEHUENCAS": ["Sehuencas.jpg"],
@@ -190,7 +196,7 @@ const IMAGE_MAP = {
     // JUNTAS - 2000 SSGG
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG": ["0020vista general.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2020 Unifilar": ["0020unifilar.jpg"],
-    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2020 Secuencias": ["2020 Secuencias.png"],
+    "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|SMEC": ["smec.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2030 Camara Val": ["2030camara val.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2040 PTA": ["2040 PTA.jpg"],
     "VISTA GENERAL IVIRIZU|JUNTAS|2000 SSGG|2050 Drenajes": ["2050 Drenajes.jpg"],

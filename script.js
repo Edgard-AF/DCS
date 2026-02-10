@@ -35,7 +35,7 @@ const TABS_CONFIG = {
             "2080 Estacion Meteo": null
         },
         "2100 Unidad N°1": {
-            "2115 Valvula Entrada": null,
+            "2115 Valvula Esferica": null,
             "2120 Secuencias": null,
             "2130 Turbina": {
                 "2131 Estados": null,
@@ -60,7 +60,7 @@ const TABS_CONFIG = {
         },
         "2200 Unidad N°2": {
             "2210 Sala Electrica": null,
-            "2215 Valvula Entrada": null,
+            "2215 Valvula Esferica": null,
             "2220 Secuencias": null,
             "2230 Turbina": null,
             "2240 Generador": null
@@ -196,7 +196,7 @@ const IMAGE_MAP = {
 
     // JUNTAS - 2100 Grupo 1
     "JUNTAS|2100 Unidad N°1": ["2100 grupo 1 juntas.jpg"],
-    "JUNTAS|2100 Unidad N°1|2115 Valvula Entrada": ["2115 Valvula Entrada.jpg"],
+    "JUNTAS|2100 Unidad N°1|2115 Valvula Esferica": ["2115 Valvula Entrada.jpg"],
     "JUNTAS|2100 Unidad N°1|2120 Secuencias": ["2120 Secuencias.jpg"],
     "JUNTAS|2100 Unidad N°1|2130 Turbina": ["2130 turbina.jpg"],
     "JUNTAS|2100 Unidad N°1|2130 Turbina|2131 Estados": ["2130 Estados.jpg"],
@@ -216,7 +216,7 @@ const IMAGE_MAP = {
     // JUNTAS - 2200 Grupo 2
     "JUNTAS|2200 Unidad N°2": ["2200 GRUPO 2.jpg"],
     "JUNTAS|2200 Unidad N°2|2210 Sala Electrica": ["2210 Sala Electrica.jpg"],
-    "JUNTAS|2200 Unidad N°2|2215 Valvula Entrada": ["2215 Valvula Entrada.jpg"],
+    "JUNTAS|2200 Unidad N°2|2215 Valvula Esferica": ["2215 Valvula Entrada.jpg"],
     "JUNTAS|2200 Unidad N°2|2220 Secuencias": ["2220 Secuencias.jpg"],
     "JUNTAS|2200 Unidad N°2|2230 Turbina": ["2230 Turbina.jpg"],
     "JUNTAS|2200 Unidad N°2|2240 Generador": ["2240 Generador.jpg"]

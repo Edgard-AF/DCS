@@ -13,23 +13,21 @@ const TABS_CONFIG = {
         "JUNTAS": {
             "2000 SSGG": {
                 "2020 Unifilar": {
-                    "Unidad N°1": {
+                    "2011 SSGG 20BMB10": {
                         "0211 CCM 21BMA10": null,
                         "0212 CCM 21BMA10": null,
                         "0218 Tableros": null
                     },
-                    "Unidad N°2": {
+                    "2012 SSGG 20BMB10": {
                         "0221 CCM 22BMA10": null,
                         "0222 CCM 22BMA10": null,
                         "0228 Tableros": null
                     },
-                    "0023 SSGG 20BMB10": null,
-                    "0024 SSGG 20BMB10": null,
-                    "0025 SSGG 20BMB10": null,
-                    "0026 SSGG Tableros": null,
-                    "0029 Totalizadores": null
+                    "2013 SSGG 20BMB10": null,
+                    "2018 SSGG Tableros": null
                 },
                 "SMEC/Totalizadores": null,
+                "Señales de CNDC": null,
                 "2040 PTA": {
                     "2041 Agua Potable": null
                 },
